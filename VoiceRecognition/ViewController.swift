@@ -1,7 +1,7 @@
 //
 //  ViewController.swift
 //  VoiceRecognition
-//
+//https://developer.apple.com/library/prerelease/content/samplecode/SpeakToMe/Listings/SpeakToMe_ViewController_swift.html
 //  Created by Emmanuel Erilibe on 11/27/16.
 //  Copyright © 2016 Emmanuel Erilibe. All rights reserved.
 //
@@ -12,6 +12,7 @@ import Speech
 
 class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     
+    @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
    
     @IBOutlet weak var recordButton: UIButton!
     
@@ -30,6 +31,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         recordButton.isEnabled = false
+        activitySpinner.isHidden = true
     }
     
     override public func viewDidAppear(_ animated: Bool) {
@@ -106,6 +108,9 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         try audioEngine.start()
         
         textView.text = "(Go ahead, I'm listening)"
+        
+        activitySpinner.isHidden = false
+        activitySpinner.startAnimating()
     }
     
     public func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
@@ -117,7 +122,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
             recordLabel.text = "Recognition not available!"
         }
     }
-
+    
     @IBAction func recordButtonPressed() {
         
         if audioEngine.isRunning {
@@ -125,6 +130,8 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
             recognitionRequest?.endAudio()
             recordButton.isEnabled = false
             recordLabel.text = "Stopping"
+            activitySpinner.stopAnimating()
+            activitySpinner.isHidden = true
         } else {
             try! startRecording()
             recordLabel.text = "Stop recording"

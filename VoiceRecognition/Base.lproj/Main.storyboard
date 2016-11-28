@@ -73,10 +73,18 @@
                                     <action selector="recordButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cc8-3A-tEy"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="me8-bj-mAc">
+                                <rect key="frame" x="157" y="539" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="TZy-4K-o3i"/>
+                                    <constraint firstAttribute="width" constant="60" id="pD2-U9-sFK"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cEz-rV-ERC" firstAttribute="top" secondItem="wzO-tM-i5v" secondAttribute="bottom" constant="8" id="6fF-5f-HSZ"/>
+                            <constraint firstItem="me8-bj-mAc" firstAttribute="centerY" secondItem="cEz-rV-ERC" secondAttribute="centerY" id="72R-fr-xxd"/>
                             <constraint firstItem="wzO-tM-i5v" firstAttribute="top" secondItem="k7A-pg-vXt" secondAttribute="bottom" constant="8" id="C6L-79-dnj"/>
                             <constraint firstItem="wzO-tM-i5v" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="L6l-Ec-jCK"/>
                             <constraint firstItem="OnA-Je-3aZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="M6X-GS-L1g"/>
@@ -87,11 +95,13 @@
                             <constraint firstAttribute="trailing" secondItem="k7A-pg-vXt" secondAttribute="trailing" id="kdp-3y-Q8c"/>
                             <constraint firstItem="OnA-Je-3aZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ntL-1P-0Mm"/>
                             <constraint firstItem="k7A-pg-vXt" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rpP-a4-Jnv"/>
+                            <constraint firstItem="me8-bj-mAc" firstAttribute="centerX" secondItem="cEz-rV-ERC" secondAttribute="centerX" id="vig-Jp-eah"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OnA-Je-3aZ" secondAttribute="bottom" constant="20" id="x3R-9r-w4c"/>
                             <constraint firstItem="k7A-pg-vXt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xGF-AI-EeQ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activitySpinner" destination="me8-bj-mAc" id="kdy-Im-PEH"/>
                         <outlet property="recordButton" destination="cEz-rV-ERC" id="dgk-O8-Rce"/>
                         <outlet property="recordLabel" destination="OnA-Je-3aZ" id="DHl-en-c1i"/>
                         <outlet property="textView" destination="wzO-tM-i5v" id="MZD-oR-hJe"/>
