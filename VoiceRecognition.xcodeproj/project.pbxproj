@@ -12,6 +12,7 @@
 		A0E850061DEBCFFC00B75DB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0E850041DEBCFFC00B75DB7 /* Main.storyboard */; };
 		A0E850081DEBCFFC00B75DB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0E850071DEBCFFC00B75DB7 /* Assets.xcassets */; };
 		A0E8500B1DEBCFFC00B75DB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0E850091DEBCFFC00B75DB7 /* LaunchScreen.storyboard */; };
+		A0E850141DEBD41500B75DB7 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E850131DEBD41500B75DB7 /* CircleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		A0E850071DEBCFFC00B75DB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0E8500A1DEBCFFC00B75DB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0E8500C1DEBCFFD00B75DB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0E850131DEBD41500B75DB7 /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		A0E84FFF1DEBCFFC00B75DB7 /* VoiceRecognition */ = {
 			isa = PBXGroup;
 			children = (
+				A0E850121DEBD05100B75DB7 /* View */,
 				A0E850001DEBCFFC00B75DB7 /* AppDelegate.swift */,
 				A0E850021DEBCFFC00B75DB7 /* ViewController.swift */,
 				A0E850041DEBCFFC00B75DB7 /* Main.storyboard */,
@@ -62,6 +65,14 @@
 				A0E8500C1DEBCFFD00B75DB7 /* Info.plist */,
 			);
 			path = VoiceRecognition;
+			sourceTree = "<group>";
+		};
+		A0E850121DEBD05100B75DB7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A0E850131DEBD41500B75DB7 /* CircleButton.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E850141DEBD41500B75DB7 /* CircleButton.swift in Sources */,
 				A0E850031DEBCFFC00B75DB7 /* ViewController.swift in Sources */,
 				A0E850011DEBCFFC00B75DB7 /* AppDelegate.swift in Sources */,
 			);

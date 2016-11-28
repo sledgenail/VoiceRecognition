@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11760" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11755"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="VoiceRecognition" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,85 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k7A-pg-vXt">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voice Recognition" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NPd-Cp-YvN">
+                                        <rect key="frame" x="86" y="17" width="203" height="40"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="27"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.41329634189605713" green="0.78737568855285645" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="NPd-Cp-YvN" firstAttribute="top" secondItem="k7A-pg-vXt" secondAttribute="top" constant="17" id="P7U-Zg-96I"/>
+                                    <constraint firstAttribute="height" constant="75" id="VbO-dT-bT8"/>
+                                    <constraint firstAttribute="trailing" secondItem="NPd-Cp-YvN" secondAttribute="trailing" constant="86" id="WmM-Zf-w1Q"/>
+                                    <constraint firstItem="NPd-Cp-YvN" firstAttribute="leading" secondItem="k7A-pg-vXt" secondAttribute="leading" constant="86" id="YOa-tp-8O4"/>
+                                    <constraint firstAttribute="bottom" secondItem="NPd-Cp-YvN" secondAttribute="bottom" constant="18" id="fRb-rI-gnR"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hello there! Tap the green circle to transcibe your voice" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wzO-tM-i5v">
+                                <rect key="frame" x="16" y="83" width="343" height="448"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Recording!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OnA-Je-3aZ">
+                                <rect key="frame" x="16" y="607" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="81S-Xc-DhD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="27"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEz-rV-ERC" customClass="CircleButton" customModule="VoiceRecognition" customModuleProvider="target">
+                                <rect key="frame" x="157.5" y="539" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.41329634189605713" green="0.78737568855285645" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="2HE-BR-fBz"/>
+                                    <constraint firstAttribute="width" constant="60" id="7sZ-xP-IFF"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="recordButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cc8-3A-tEy"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cEz-rV-ERC" firstAttribute="top" secondItem="wzO-tM-i5v" secondAttribute="bottom" constant="8" id="6fF-5f-HSZ"/>
+                            <constraint firstItem="wzO-tM-i5v" firstAttribute="top" secondItem="k7A-pg-vXt" secondAttribute="bottom" constant="8" id="C6L-79-dnj"/>
+                            <constraint firstItem="wzO-tM-i5v" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="L6l-Ec-jCK"/>
+                            <constraint firstItem="OnA-Je-3aZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="M6X-GS-L1g"/>
+                            <constraint firstItem="cEz-rV-ERC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Na8-Te-M3V"/>
+                            <constraint firstItem="OnA-Je-3aZ" firstAttribute="top" secondItem="cEz-rV-ERC" secondAttribute="bottom" constant="8" id="Rmh-AN-BWq"/>
+                            <constraint firstItem="OnA-Je-3aZ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="TJ8-vm-y9C"/>
+                            <constraint firstItem="wzO-tM-i5v" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cbT-rQ-eyk"/>
+                            <constraint firstAttribute="trailing" secondItem="k7A-pg-vXt" secondAttribute="trailing" id="kdp-3y-Q8c"/>
+                            <constraint firstItem="OnA-Je-3aZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ntL-1P-0Mm"/>
+                            <constraint firstItem="k7A-pg-vXt" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rpP-a4-Jnv"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OnA-Je-3aZ" secondAttribute="bottom" constant="20" id="x3R-9r-w4c"/>
+                            <constraint firstItem="k7A-pg-vXt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xGF-AI-EeQ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="recordButton" destination="cEz-rV-ERC" id="dgk-O8-Rce"/>
+                        <outlet property="recordLabel" destination="OnA-Je-3aZ" id="DHl-en-c1i"/>
+                        <outlet property="textView" destination="wzO-tM-i5v" id="MZD-oR-hJe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.39130434782609" y="123.09782608695653"/>
         </scene>
     </scenes>
 </document>
